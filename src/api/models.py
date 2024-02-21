@@ -9,9 +9,9 @@ class User(db.Model):
     email = db.Column(db.String(200), nullable=False, unique=True)
     password = db.Column(db.String(200), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    peso =  db.Column(db.Integer, default="")
+    peso =  db.Column(db.Integer, default=0)
     genero =  db.Column(db.String(200), default="")
-    altura =  db.Column(db.Integer, default="")
+    altura =  db.Column(db.Integer, default=0)
    
     """ favorites_user = db.relationship('Favorite', backref = 'user') """ 
 
