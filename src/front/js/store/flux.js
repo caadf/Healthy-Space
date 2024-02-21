@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			message: null,
 			demo: [
 				{
-					title: "FIRST",
+					title: "",
 					background: "white",
 					initial: "white"
 				},
@@ -13,23 +13,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			/* ACA VA MI CODIGO */
+			access_token: null,
+			apiURL: '',
+			name: '',
+			email: '',
+			password: '',
+			password_confirm: '',
+			active: true,
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
 			getMessage: async () => {
-				try{
+				try {
 					// fetching data from the backend
 					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
 					return data;
-				}catch(error){
+				} catch (error) {
 					console.log("Error loading message from backend", error)
 				}
 			},
@@ -46,7 +54,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			/* Aca va mi codigo */
+			handleSbmit: () => {
+				e.preventdDefault()
+			},
+			handleChange: e => {
+				const { name, value } = e.target
+				setStore({
+					[name]: value
+				})
+			},
 		}
 	};
 };
