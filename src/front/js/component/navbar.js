@@ -14,9 +14,21 @@ export const Navbar = () => {
 				{
 					!!store.user ? (
 						<>
-							<Link to="/perfil" className="nav-link">Perfil</Link>
-							<button className="nav-link" onClick={actions.logout}>Logout</button>
-							<span className='nav-link'>{store?.user?.name || 'Anonimous'}</span>
+
+							<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+								<span className="navbar-toggler-icon"></span>
+							</button>
+							<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+								<div class="navbar-nav me-auto">
+									<Link to="/perfil" className="nav-link">Perfil</Link>
+									<span className='nav-link'>{store?.user?.name || 'Anonimous'}</span>
+									<button className="nav-link" onClick={actions.logout}>Logout</button>
+
+
+								</div>
+							</div>
+
+
 						</>
 					) : (
 						<>

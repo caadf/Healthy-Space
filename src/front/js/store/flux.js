@@ -150,34 +150,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}).catch(error => console.log(error))
 
 			},
-			handleSubmitRegister: e => {
-				e.preventDefault()
-				const { name, email, password, active, apiURL } = getStore()
-				const { getFetch } = getActions()
-				const url = `${apiURL}/api/register`
-				const raw = JSON.stringify({
-					name, email, password, active
-				})
-				const options = {
-					method: 'POST',
-					body: raw,
-					headers: {
-						'Content-Type': 'application/json'
-					}
-				}
-				const request = getFetch(url, options)
-				request.then((response) => response.json()).then((datos) => {
-					console.log(datos)
-					toast.success(datos.success)
-					setStore({
-						name: '',
-						email: '',
-						password: '',
-						password_confirm: '',
-						active: true,
-					})
-				}).catch(error => console.log(error))
-			},
+
 			getFetch: (url, options) => {
 				return fetch(url, options)
 			},
