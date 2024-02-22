@@ -153,7 +153,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getFetch: (url, options) => {
 				return fetch(url, options)
-			}
+			},
+		
+
 		}
 	};
 };
