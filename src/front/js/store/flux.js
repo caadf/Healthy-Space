@@ -25,6 +25,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			password: '',
 			password_confirm: '',
 			is_active: true,
+			peso: 0,
+			altura: 0,
+			edad: 0,
+			genero: '1',
+			calorias: 0
 
 		},
 		actions: {
@@ -170,6 +175,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 						user: JSON.parse(sessionStorage.getItem('user'))
 					})
 				}
+			},
+			calcularCalorias: e => {
+				e.preventDefault()
+				const { peso, altura, edad, genero } = getStore()
+				if (genero == 1) {
+					let kcal = ((10 * peso) + (6.25 * altura) - (5 * edad) + 5) * 1.2
+					console.log(kcal)
+					setStore({
+						peso: 0,
+						altura: 0,
+						edad: 0,
+						calorias: kcal
+					})
+				} else {
+					let kcal = ((10 * peso) + (6.25 * altura) - (5 * edad) - 161) * 1.2
+					console.log(kcal)
+					setStore({
+						peso: 0,
+						altura: 0,
+						edad: 0,
+						calorias: kcal
+					})
+				}
+
 			}
 		}
 	};
