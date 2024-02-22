@@ -20,8 +20,10 @@ export const Navbar = () => {
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 								<div class="navbar-nav me-auto">
-									<Link to="/perfil" className="nav-link">Perfil</Link>
-									<span className='nav-link'>{store?.user?.name || 'Anonimous'}</span>
+									<Link to="/busquedaderecetas" className="nav-link">Busqueda de recetas</Link>
+									<Link to="/calculoplanalimenticio" className="nav-link">Calculo Plan alimenticio</Link>
+									<Link to="/gastocalorico" className="nav-link">Calculo Gasto Calorico</Link>
+									<Link to="/perfil" className="nav-link">{store.user.name}</Link>
 									<button className="nav-link" onClick={actions.logout}>Logout</button>
 
 
