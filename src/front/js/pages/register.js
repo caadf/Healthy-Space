@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
+import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom'
 import { Context } from "../store/appContext";
 
 
 const Register = () => {
     const { store, actions } = useContext(Context)
-
+    if (!!store.user) return <Navigate to="/" replace />
     return (
         <>
             <form onSubmit={actions.handleSubmitRegister} className='w-50 mx-auto py-5 my-5'>

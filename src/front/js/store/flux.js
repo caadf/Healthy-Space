@@ -180,6 +180,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getFetch: (url, options) => {
 				return fetch(url, options)
+			},
+			logout: () => {
+				setStore({
+					user: null,
+					access_token: null
+				})
+				sessionStorage.removeItem('user')
+				sessionStorage.removeItem('access_token')
+			},
+
+			checkCurrentUser: () => {
+				if (sessionStorage.getItem('access_token')) {
+					setStore({
+						access_token: sessionStorage.getItem('access_token'),
+						user: JSON.parse(sessionStorage.getItem('user'))
+					})
+				}
 			}
 		}
 	};
