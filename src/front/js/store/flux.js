@@ -111,7 +111,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			handleSubmitLogin: e => {
 				e.preventDefault()
-				toast.success("Haciendo Login")
 				const { email, password, apiURL } = getStore()
 				const { getFetch } = getActions()
 
@@ -151,11 +150,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}).catch(error => console.log(error))
 
 			},
+
 			getFetch: (url, options) => {
 				return fetch(url, options)
 			},
 		
 
+			logout: () => {
+				setStore({
+					user: null,
+					access_token: null
+				})
+				sessionStorage.removeItem('user')
+				sessionStorage.removeItem('access_token')
+			},
+
+			checkCurrentUser: () => {
+				if (sessionStorage.getItem('access_token')) {
+					setStore({
+						access_token: sessionStorage.getItem('access_token'),
+						user: JSON.parse(sessionStorage.getItem('user'))
+					})
+				}
+			}
 		}
 	};
 };
