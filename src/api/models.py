@@ -12,6 +12,7 @@ class User(db.Model):
     peso =  db.Column(db.Integer, default=0)
     genero =  db.Column(db.String(200), default="")
     altura =  db.Column(db.Integer, default=0)
+
    
     """ favorites_user = db.relationship('Favorite', backref = 'user') """ 
 

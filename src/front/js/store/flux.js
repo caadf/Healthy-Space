@@ -172,6 +172,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						user: JSON.parse(sessionStorage.getItem('user'))
 					})
 				}
+			}, 
+			getMealData () {
+				fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=c46803008c304195bf0a87661a0ecf06&timeFrame=day&targetCalories=${calories}`)
+					.then((response) => response.json())
+					.then((data) => {
+						setMealData(data);
+						console.log(data);
+					})
+					.catch(() => {
+						console.log("error")
+					});
+		
 			}
 		}
 	};
