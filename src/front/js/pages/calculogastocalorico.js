@@ -6,7 +6,7 @@ import "../../styles/home.css";
 
 const CalculoGastoCalorico = () => {
     const { store, actions } = useContext(Context);
-
+    if (store.user == null) return <Navigate to="/" replace />
     return (
         <>
             <form onSubmit={actions.calcularCalorias} className='w-50 mx-auto py-5 my-5'>

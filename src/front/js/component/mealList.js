@@ -6,18 +6,19 @@ const MealList = ({ mealData }) => {
 
     return (
         <>
-            <div className="nutrientes">
-                <h1>Macros</h1>
-                <ul>
-                    <li>Calories:{nutrients.calories}</li>
-                    <li>Carbohydrates:{nutrients.carbohydrates}</li>
-                    <li>Fat:{nutrients.fat}</li>
-                    <li>Protein:{nutrients.protein}</li>
-                </ul>
+            <div className="card text-white bg-success m-3">
+                <div class="card-header fs-1">Macros</div>
+                <div class="card-body fs-3">
+                    <div>Calories:{nutrients.calories}</div>
+                    <div>Carbohydrates:{nutrients.carbohydrates}</div>
+                    <div>Fat:{nutrients.fat}</div>
+                    <div>Protein:{nutrients.protein}</div>
+                </div>
+
             </div>
-            <div className="meals">
+            <div className="meals d-flex">
                 {mealData.meals.map((meal) => {
-                    return <Meal key={meal.id} meal={meal}/>;
+                    return <Meal key={meal.id} meal={meal} />;
 
                 })}
 

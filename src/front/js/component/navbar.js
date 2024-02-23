@@ -8,9 +8,9 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<div className="container-fluid">
-				<a className="navbar-brand" href="#">Healty Space</a>
+		<nav className="navbar navbar-expand-lg navbar-light bg-success text-light">
+			<div className="container-fluid text-light">
+				<a className="navbar-brand text-light fs-3" href="#">Healthy Space</a>
 				{
 					!!store.user ? (
 						<>
@@ -19,12 +19,12 @@ export const Navbar = () => {
 								<span className="navbar-toggler-icon"></span>
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-								<div class="navbar-nav me-auto">
-									<Link to="/busquedaderecetas" className="nav-link">Busqueda de recetas</Link>
-									<Link to="/calculoplanalimenticio" className="nav-link">Calculo Plan alimenticio</Link>
-									<Link to="/gastocalorico" className="nav-link">Calculo Gasto Calorico</Link>
-									<Link to="/perfil" className="nav-link">{store.user.name}</Link>
-									<button className="nav-link" onClick={actions.logout}>Logout</button>
+								<div class="navbar-nav ms-auto">
+									<Link to="/busquedaderecetas" className="nav-link text-info fs-5">Busqueda de recetas</Link>
+									<Link to="/calculoplanalimenticio" className="nav-link text-info fs-5">Calculo Plan alimenticio</Link>
+									<Link to="/gastocalorico" className="nav-link text-info fs-5">Calculo Gasto Calorico</Link>
+									<Link to="/perfil" className="nav-link text-info fs-5">{store.user.name}</Link>
+									<button className="nav-link bg-secondary text-light rounded-3" onClick={actions.logout}>Logout</button>
 
 
 								</div>
@@ -39,9 +39,9 @@ export const Navbar = () => {
 								<span className="navbar-toggler-icon"></span>
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-								<div class="navbar-nav">
-									<Link to="/login" className="nav-link">Login</Link>
-									<Link to="/register" className="nav-link">Register</Link>
+								<div class="navbar-nav ms-auto">
+									<Link to="/login" className="nav-link text-info fs-5">Login</Link>
+									<Link to="/register" className="nav-link text-info fs-5">Register</Link>
 
 								</div>
 							</div>
