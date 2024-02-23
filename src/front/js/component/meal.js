@@ -16,15 +16,19 @@ const Meal = ({ meal }) => {
     )
 
     return (
-        <article>
-            <h1>{meal.title}</h1>
-            <img src={imageUrl} alt="recipe" />
-            <ul>
-                <li>Preparation time:{meal.readyinMinutes}minutes</li>
-                <li>Number of servings: {meal.servings}</li>
-            </ul>
-        
-        </article>
+        <>
+            <div class="card mx-2 bg-success text-light">
+                <img src={imageUrl} alt="recipe" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">{meal.title}</h5>
+                    <ul>
+                        <li>Preparation time:{meal.readyInMinutes}minutes</li>
+                        <li>Number of servings: {meal.servings}</li>
+                    </ul>
+                    <a href={meal.sourceUrl} class="btn btn-primary" target="_blank">Go to receipe</a>
+                </div>
+            </div>
+        </>
     )
 
 }

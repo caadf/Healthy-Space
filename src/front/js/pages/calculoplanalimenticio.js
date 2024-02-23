@@ -15,7 +15,7 @@ const CalculoPlanAlimenticio = () => {
         setCalories(e.target.value);
 
     }
-    function getMealData ()  {
+    function getMealData() {
         fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=c46803008c304195bf0a87661a0ecf06&timeFrame=day&targetCalories=${calories}`)
             .then((response) => response.json())
             .then((data) => {
@@ -27,17 +27,17 @@ const CalculoPlanAlimenticio = () => {
             });
 
     }
-
+    if (store.user == null) return <Navigate to="/" replace />
     return (
 
-        <>
+        <div className="w-50 mx-auto m-5 text-center">
             <div className="controls">
-                <input type="number" placeholder="calorias" onChange={handleChange} />
-
+                <input type="number" placeholder="Inserte Calorias" className="rounded-3" onChange={handleChange} />
+                <button className="bg-primary text-light rounded-3" onClick={getMealData}>Plan alimenticio</button>
             </div>
-            <button onClick={getMealData}>Plan alimenticio</button>
+
             {mealData && <MealList mealData={mealData} />}
-        </>
+        </div>
     );
 };
 
