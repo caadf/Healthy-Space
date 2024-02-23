@@ -77,3 +77,15 @@ def register():
     
     return jsonify({"success": "Register successfully, please log in!"}), 200
 
+
+""" @api.route('/register/<int:user_id> ', methods=['DELETE'])
+def delete( user_id):
+    
+    user = User.query.get(user_id)
+    
+    if not user: return jsonify({"msg": "User doesn't exist!"}), 404
+    
+    db.session.delete(user)
+    db.session.commit()
+    
+    return jsonify({"msg": "User was deleted!"}), 200 """
