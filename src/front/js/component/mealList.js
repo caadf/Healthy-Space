@@ -1,7 +1,7 @@
 import React from "react";
 import Meal from "./meal";
 
-function MealList({ mealData }) {
+const MealList = ({ mealData }) => {
     const nutrients = mealData.nutrients;
 
     return (

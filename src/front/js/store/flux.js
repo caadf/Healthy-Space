@@ -178,7 +178,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				}
 			}, 
-			getMealData () {
+			/* getMealData: () => {
 				fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=c46803008c304195bf0a87661a0ecf06&timeFrame=day&targetCalories=${calories}`)
 					.then((response) => response.json())
 					.then((data) => {
@@ -189,7 +189,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("error")
 					});
 		
-			},
+			}, */
 			calcularCalorias: e => {
 				e.preventDefault()
 				const { peso, altura, edad, genero } = getStore()

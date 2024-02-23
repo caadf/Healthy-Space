@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Meal({ meal }) {
+const Meal = ({ meal }) => {
     const [imageUrl, setImageUrl] = useState("");
 
     useEffect(() => {
@@ -23,6 +23,7 @@ function Meal({ meal }) {
                 <li>Preparation time:{meal.readyinMinutes}minutes</li>
                 <li>Number of servings: {meal.servings}</li>
             </ul>
+        
         </article>
     )
 

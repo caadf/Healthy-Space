@@ -11,6 +11,7 @@ import injectContext from "./store/appContext";
 import Register from "./pages/register";
 import Perfil from "./pages/perfil";
 import CalculoGastoCalorico from "./pages/calculogastocalorico"
+import CalculoPlanAlimenticio from "./pages/calculoplanalimenticio"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -35,6 +36,7 @@ const Layout = () => {
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<CalculoGastoCalorico />} path="/gastocalorico" />
+                        <Route element={<CalculoPlanAlimenticio />} path="/calculoplanalimenticio" />
                     </Routes>
                     <Footer />
                     <ToastContainer />

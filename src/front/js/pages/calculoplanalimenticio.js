@@ -5,9 +5,9 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import MealList from "../component/mealList";
 
-function CalculoPlanAlimenticio() {
-    /*  const { store, actions } = useContext(Context);
-     if (!!store.user) return <Navigate to="/" replace /> */
+const CalculoPlanAlimenticio = () => {
+    const { store, actions } = useContext(Context);
+
     const [mealData, setMealData] = useState(null);
     const [calories, setCalories] = useState(2000);
 
@@ -15,8 +15,19 @@ function CalculoPlanAlimenticio() {
         setCalories(e.target.value);
 
     }
+    function getMealData ()  {
+        fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=c46803008c304195bf0a87661a0ecf06&timeFrame=day&targetCalories=${calories}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setMealData(data);
+                console.log(data);
+            })
+            .catch(() => {
+                console.log("error")
+            });
 
-    
+    }
+
     return (
 
         <>
@@ -25,7 +36,7 @@ function CalculoPlanAlimenticio() {
 
             </div>
             <button onClick={getMealData}>Plan alimenticio</button>
-            {mealData && <MealList mealData={mealData}/> }
+            {mealData && <MealList mealData={mealData} />}
         </>
     );
 };
