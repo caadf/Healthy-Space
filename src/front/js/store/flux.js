@@ -19,7 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			/* ACA VA MI CODIGO */
 			user: null,
 			access_token: null,
-			apiURL: 'https://reimagined-couscous-pjjgxg565j6rf6gvq-3001.app.github.dev',
+			apiURL: 'http://127.0.0.1:3001',
 			name: '',
 			email: '',
 			password: '',
@@ -159,7 +159,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getFetch: (url, options) => {
 				return fetch(url, options)
 			},
-		
+
 
 			logout: () => {
 				setStore({
@@ -177,7 +177,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						user: JSON.parse(sessionStorage.getItem('user'))
 					})
 				}
-			}, 
+			},
 			/* getMealData: () => {
 				fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=c46803008c304195bf0a87661a0ecf06&timeFrame=day&targetCalories=${calories}`)
 					.then((response) => response.json())
