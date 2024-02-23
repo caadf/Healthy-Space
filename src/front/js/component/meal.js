@@ -23,7 +23,7 @@ const Meal = ({ meal }) => {
                 <li>Preparation time:{meal.readyinMinutes}minutes</li>
                 <li>Number of servings: {meal.servings}</li>
             </ul>
-        
+       
         </article>
     )
 
