@@ -12,6 +12,8 @@ import Register from "./pages/register";
 import Perfil from "./pages/perfil";
 import CalculoGastoCalorico from "./pages/calculogastocalorico"
 import CalculoPlanAlimenticio from "./pages/calculoplanalimenticio"
+import BusquedadeRecetas from "./pages/busquedaderecetas"
+
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -37,6 +39,7 @@ const Layout = () => {
                         <Route element={<Register />} path="/register" />
                         <Route element={<CalculoGastoCalorico />} path="/gastocalorico" />
                         <Route element={<CalculoPlanAlimenticio />} path="/calculoplanalimenticio" />
+                        <Route element={<BusquedadeRecetas />} path="/busquedareceta" />
                     </Routes>
                     <Footer />
                     <ToastContainer />

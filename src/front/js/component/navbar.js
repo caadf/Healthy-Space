@@ -20,7 +20,7 @@ export const Navbar = () => {
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 								<div class="navbar-nav ms-auto">
-									<Link to="/busquedaderecetas" className="nav-link text-info fs-5">Busqueda de recetas</Link>
+									<Link to="/busquedareceta" className="nav-link text-info fs-5">Busqueda de recetas</Link>
 									<Link to="/calculoplanalimenticio" className="nav-link text-info fs-5">Calculo Plan alimenticio</Link>
 									<Link to="/gastocalorico" className="nav-link text-info fs-5">Calculo Gasto Calorico</Link>
 									<Link to="/perfil" className="nav-link text-info fs-5">{store.user.name}</Link>

@@ -31,7 +31,7 @@ const CalculoGastoCalorico = () => {
                 </div>
                 <button className="btn btn-primary btn-sm w-100">Calculate</button>
             </form>
-            <div className='w-50 mx-auto py-5 my-5'>
+            <div className='w-50 mx-auto py-5 my-5 bg-success text-light text-center rounded-3'>
                 <h1>Calorias totales: {store.calorias}</h1>
             </div>
         </>
