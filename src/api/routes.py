@@ -78,14 +78,56 @@ def register():
     return jsonify({"success": "Register successfully, please log in!"}), 200
 
 
-""" @api.route('/register/<int:user_id> ', methods=['DELETE'])
-def delete( user_id):
+@api.route('/perfil', methods=['GET'])
+def perfil():
     
-    user = User.query.get(user_id)
+    name = request.json.get('name', '')
+    peso = request.json.get('peso')
+    altura = request.json.get('altura')
+    edad = request.json.get('edad')
+    genero = request.json.get('genero')
     
-    if not user: return jsonify({"msg": "User doesn't exist!"}), 404
+
     
-    db.session.delete(user)
-    db.session.commit()
+    user = User()
+    user.name = name
+    user.peso = peso
+    user.altura = altura
+    user.edad = edad
+    user.genero = genero
+
+    #db.session.add(user)
+    #db.session.commit()
     
-    return jsonify({"msg": "User was deleted!"}), 200 """
+    user.save()
+    
+    
+    return jsonify({"success": "You have update you profile"}), 200
+
+
+
+@api.route('/perfil', methods=['POST'])
+def perfil_actualizar():
+    
+    name = request.json.get('name', '')
+    peso = request.json.get('peso')
+    altura = request.json.get('altura')
+    edad = request.json.get('edad')
+    genero = request.json.get('genero')
+    
+
+    
+    user = User()
+    user.name = name
+    user.peso = peso
+    user.altura = altura
+    user.edad = edad
+    user.genero = genero
+
+    #db.session.add(user)
+    #db.session.commit()
+    
+    user.save()
+    
+    
+    return jsonify({"success": "You have update you profile"}), 200

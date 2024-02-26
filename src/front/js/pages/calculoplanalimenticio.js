@@ -37,6 +37,9 @@ const CalculoPlanAlimenticio = () => {
             </div>
 
             {mealData && <MealList mealData={mealData} />}
+
+           
+        
         </div>
     );
 };

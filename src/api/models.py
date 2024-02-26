@@ -12,6 +12,7 @@ class User(db.Model):
     peso =  db.Column(db.Integer, default=0)
     genero =  db.Column(db.String(200), default="")
     altura =  db.Column(db.Integer, default=0)
+    edad = db.Column(db.Integer, default=0)
 
    
     """ favorites_user = db.relationship('Favorite', backref = 'user') """ 
@@ -27,7 +28,8 @@ class User(db.Model):
             "is_active": self.is_active,
             "peso": self.peso,
             "genero": self.genero,
-            "altura": self.altura
+            "altura": self.altura,
+            "edad": self.edad
         }
     
     def save(self):
@@ -42,14 +44,3 @@ class User(db.Model):
         db.session.commit()
 
 
-""" class Favorite(db.Model):
-    __tablename__ = 'favorites'
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-
-    def serialize(self):
-        return {
-            "id": self.id,
-            "user_id": self.user_id,
-            
-        }  """
