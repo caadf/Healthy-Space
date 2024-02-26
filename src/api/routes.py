@@ -104,6 +104,17 @@ def perfil():
     
     return jsonify({"success": "You have update you profile"}), 200
 
+""" @api.route('/perfil', methods=['GET'])
+def get_users():
+    usuario_query = User.query.all() # haciendo una consulta a la User para que traiga todos
+    usuario_query = list(map(lambda item: item.serialize(), usuario_query))
+    response_body = {
+        "message": "Usuarios encontrados",
+        "Usuario":usuario_query
+    }
+
+    return jsonify(response_body), 200 """
+
 
 
 @api.route('/perfil', methods=['POST'])

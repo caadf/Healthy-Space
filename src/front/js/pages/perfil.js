@@ -9,13 +9,17 @@ const Perfil = () => {
 
     if (store.user == null) return <Navigate to="/" replace />
 
+    /* useEffect(() => {
+        actions.handlePerfil();
+    }, []); */
+  
     return (
         <>
             <h1>Perfil</h1>
             <form onSubmit={actions.handlePerfil} className='w-50 mx-auto py-5 my-5'>
                 <div className="form-group mb-3 w-25 mx-auto">
-                    <label htmlFor="peso" className="form-label">Nombre</label>
-                    <input className='form-control' type="text" name="nombre" id="nombre" placeholder='Insertar Nombre' value={store.name} onChannamege={actions.handleChange} />
+                    <label htmlFor="name" className="form-label">Nombre</label>
+                    <input className='form-control' type="text" name="name" id="name" placeholder='Insertar Nombre' value={store.name} onChange={actions.handleChange} />
                 </div>
                 <div className="form-group mb-3 w-25 mx-auto">
                     <label htmlFor="peso" className="form-label">Peso en Kg</label>
@@ -34,9 +38,10 @@ const Perfil = () => {
                     <select class="form-select form-select-sm mt-2" aria-label="Small select example" name="genero" id="genero" value={store.genero} onChange={actions.handleChange}>
                         <option selected value="1">Masculino</option>
                         <option value="2">Femenino</option>
+
                     </select>
                 </div>
-            </form> 
+            </form>
 
         </>
     );
