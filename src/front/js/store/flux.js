@@ -1,3 +1,4 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -19,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			/* ACA VA MI CODIGO */
 			user: null,
 			access_token: null,
-			apiURL: 'https://reimagined-couscous-pjjgxg565j6rf6gvq-3001.app.github.dev',
+			apiURL: 'http://127.0.0.1:3001',
 			name: '',
 			email: '',
 			password: '',
@@ -29,7 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			altura: 0,
 			edad: 0,
 			genero: '1',
-			calorias: 0,
+			calorias: 0
 
 		},
 		actions: {
@@ -215,9 +216,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
-		}
-	};
+		},
+	}
 };
 
 
 export default getState;
+

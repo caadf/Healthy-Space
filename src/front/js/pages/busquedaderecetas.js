@@ -9,7 +9,7 @@ const BusquedadeRecetas = () => {
     const { store, actions } = useContext(Context);
     const [recetaData, setRecetaData] = useState(null);
 
-    if (store.user == null) return <Navigate to="/" replace />
+
 
     const [calorias, setCalorias] = useState(200);
     let minCalorias = calorias - 50
@@ -32,7 +32,7 @@ const BusquedadeRecetas = () => {
             });
 
     }
-
+    if (store.user == null) return <Navigate to="/" replace />
     return (
         <>
             <div className="w-50 mx-auto m-5 text-center">

@@ -10,7 +10,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-success text-light">
 			<div className="container-fluid text-light">
-				<a className="navbar-brand text-light fs-3" href="#">Healthy Space</a>
+				<Link className="navbar-brand text-light fs-3" to="/">Healthy Space</Link>
 				{
 					!!store.user ? (
 						<>
