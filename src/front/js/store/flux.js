@@ -1,3 +1,4 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -19,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			/* ACA VA MI CODIGO */
 			user: null,
 			access_token: null,
-			apiURL: 'https://reimagined-couscous-pjjgxg565j6rf6gvq-3001.app.github.dev',
+			apiURL: 'http://127.0.0.1:3001',
 			name: '',
 			email: '',
 			password: '',
@@ -29,7 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			altura: 0,
 			edad: 0,
 			genero: '1',
-			calorias: 0,
+			calorias: 0
 
 		},
 		actions: {
@@ -214,52 +215,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
+			calculoPlanAconCalorias: () => {
+				const navigate = useNavigate()
+				navigate('/calculoplanalimenticio');
 
+			}
 
-			handlePerfil: e => {
-				e.preventDefault()
-				const { name, peso, altura, genero, edad, apiURL } = getStore()
-				const { getFetch } = getActions()
+		},
+	}
+};
 
-				// creo la url a acceder
-				const url = `${apiURL}/api/perfil`
-
-				// Transformo los datos en string
-				const raw = JSON.stringify({
-					name, peso, altura, genero, edad
-				})
-
-				// creo las opciones de la peticion (request)
-				const options = {
-					method: 'POST',
-					body: raw,
-					headers: {
-						'Content-Type': 'application/json'
-					}
-				}
-				const request = getFetch(url, options)
-				request.then((response) => response.json()).then((datos) => {
-					console.log(datos)
-
-					if (datos.msg) {
-						toast.error(datos.msg)
-					} else {
-						toast.success(datos.success)
-						setStore({
-							name: '',
-							peso: 0,
-							altura: 0,
-							genero: '',
-							edad: 0
-						})
-						sessionStorage.setItem('user', JSON.stringify(datos.user))
-					}
-				}).catch(error => console.log(error))
-
-			},
-
-		}
-	};
-}
 
 export default getState;
