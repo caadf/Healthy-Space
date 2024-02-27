@@ -23,7 +23,7 @@ export const Navbar = () => {
 									<Link to="/busquedareceta" className="nav-link text-info fs-5">Busqueda de recetas</Link>
 									<Link to="/calculoplanalimenticio" className="nav-link text-info fs-5">Calculo Plan alimenticio</Link>
 									<Link to="/gastocalorico" className="nav-link text-info fs-5">Calculo Gasto Calorico</Link>
-									<Link to="/perfil" className="nav-link text-info fs-5">{store.user.name}</Link>
+									<p className="nav-link text-info fs-5">{store.user.name}</p>
 									<button className="nav-link bg-secondary text-light rounded-3" onClick={actions.logout}>Logout</button>
 
 
