@@ -215,11 +215,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			calculoPlanAconCalorias: () => {
-				const navigate = useNavigate()
-				navigate('/calculoplanalimenticio');
-
-			}
 
 		},
 	}
@@ -227,3 +222,4 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 export default getState;
+

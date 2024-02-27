@@ -10,6 +10,7 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import Register from "./pages/register";
 import Perfil from "./pages/perfil";
+import Home from "./pages/home";
 import CalculoGastoCalorico from "./pages/calculogastocalorico"
 import CalculoPlanAlimenticio from "./pages/calculoplanalimenticio"
 import BusquedadeRecetas from "./pages/busquedaderecetas"
@@ -34,6 +35,7 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
+                        <Route element={<Home />} path="/" />
                         <Route element={<Perfil />} path="/perfil" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />

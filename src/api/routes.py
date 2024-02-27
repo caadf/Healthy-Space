@@ -78,32 +78,6 @@ def register():
     return jsonify({"success": "Register successfully, please log in!"}), 200
 
 
-@api.route('/perfil', methods=['GET'])
-def perfil():
-    
-    name = request.json.get('name', '')
-    peso = request.json.get('peso')
-    altura = request.json.get('altura')
-    edad = request.json.get('edad')
-    genero = request.json.get('genero')
-    
-
-    
-    user = User()
-    user.name = name
-    user.peso = peso
-    user.altura = altura
-    user.edad = edad
-    user.genero = genero
-
-    #db.session.add(user)
-    #db.session.commit()
-    
-    user.save()
-    
-    
-    return jsonify({"success": "You have update you profile"}), 200
-
 """ @api.route('/perfil', methods=['GET'])
 def get_users():
     usuario_query = User.query.all() # haciendo una consulta a la User para que traiga todos
@@ -115,6 +89,23 @@ def get_users():
 
     return jsonify(response_body), 200 """
 
+@api.route('/perfil', methods=['GET'])
+def get_usuario():
+    
+    user = User.query.all()
+    print(user)
+    user = list(map(lambda user: user.serialize(), user))
+    print(user)
+    return jsonify(user), 200
+
+@api.route('/profile', methods=['GET'])
+def get_profile(user_id):
+    user = User.query.get(user_id)
+    
+    if user is None:
+        return jsonify({"error": "Usuario no encontrado"}), 404
+
+    return jsonify(user.serialize()), 200
 
 
 @api.route('/perfil', methods=['POST'])
