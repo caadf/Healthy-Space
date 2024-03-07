@@ -16,7 +16,7 @@ const MealList = ({ mealData }) => {
                 </div>
 
             </div>
-            <div className="meals d-flex">
+            <div className="meals d-flex flex-xl-row flex-column m-3">
                 {mealData.meals.map((meal) => {
                     return <Meal key={meal.id} meal={meal} />;
 
