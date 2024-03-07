@@ -6,7 +6,7 @@ const ComidaList = ({ recetaData }) => {
 
     return (
         <>
-            <div className="meals d-flex m-3">
+            <div className="meals d-flex flex-xl-row flex-column m-3">
                 {recetaData.map((receta) => {
                     return <Comida key={receta.id} receta={receta} />;
 
