@@ -8,9 +8,9 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-success text-light">
+		<nav className="navbar navbar-expand-lg text-light">
 			<div className="container-fluid text-light">
-				<Link className="navbar-brand text-light fs-3" to="/">Healthy Space</Link>
+				<Link className="navbar-brand text-success fs-3" to="/">Healthy Space</Link>
 				{
 					!!store.user ? (
 						<>
