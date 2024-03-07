@@ -20,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			/* ACA VA MI CODIGO */
 			user: null,
 			access_token: null,
-			apiURL: 'http://127.0.0.1:3001',
+			apiURL: 'https://reimagined-couscous-pjjgxg565j6rf6gvq-3001.app.github.dev',
 			name: '',
 			email: '',
 			password: '',

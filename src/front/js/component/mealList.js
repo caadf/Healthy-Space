@@ -6,9 +6,9 @@ const MealList = ({ mealData }) => {
 
     return (
         <>
-            <div className="card text-white bg-success m-3">
+            <div className="card text-white bg-success m-3 ">
                 <div class="card-header fs-1">Macros</div>
-                <div class="card-body fs-3">
+                <div class="card-body fs-3 ">
                     <div>Calories:{nutrients.calories}</div>
                     <div>Carbohydrates:{nutrients.carbohydrates}</div>
                     <div>Fat:{nutrients.fat}</div>
