@@ -16,7 +16,7 @@ const Meal = ({ meal }) => {
     )
     return (
         <>
-            <div class="card mx-2 bg-success text-light">
+            <div class="card mx-2 bg-success bg-opacity-50 text-primary">
                 <img src={imageUrl} alt="recipe" class="card-img-top" />
                 <div class="card-body">
                     <h5 class="card-title">{meal.title}</h5>

@@ -29,7 +29,7 @@ const CalculoGastoCalorico = () => {
                         <option value="2">Femenino</option>
                     </select>
                 </div>
-                <button className="btn btn-primary btn-sm w-100">Calcular</button>
+                <button className="btn btn-primary btn-sm w-100">Calculate</button>
             </form>
             <div className='w-50 mx-auto py-5 my-5 bg-success text-light text-center rounded-3'>
                 <h3>Calorías totales: {store.calorias}</h3>

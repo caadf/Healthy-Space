@@ -9,9 +9,9 @@ const Home = () => {
 
         <>
 
-            <div className="card text-bg-dark">
+            <div className="card text-bg-dark ">
                 <img src="https://plus.unsplash.com/premium_photo-1663852297514-2211cfb8ae9b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img opacity-50 " alt="..." />
-                <div className="card-img-overlay text-center">
+                <div className="card-img-overlay text-center  ">
                     <h1 class="card-title">Bienvenido a Healthy Space</h1>
                     <p class="card-text">En este espacio podras conocer tu gasto calorico diario y con ello tendras la posibilidad de acceder a un plan de alimentacion <br></br> con informacionde calorias, proteinas, y grasas junto con sus recetas respectivas</p>
                     
