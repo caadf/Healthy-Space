@@ -78,6 +78,13 @@ def register():
     return jsonify({"success": "Register successfully, please log in!"}), 200
 
 
+
+
+
+
+
+
+
 """ @api.route('/perfil', methods=['GET'])
 def get_users():
     usuario_query = User.query.all() # haciendo una consulta a la User para que traiga todos

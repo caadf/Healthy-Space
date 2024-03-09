@@ -16,8 +16,8 @@ export const Navbar = () => {
 					!!store.user ? (
 						<>
 
-							<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-								<span className="navbar-toggler-icon"></span>
+							<button className="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+								<span className="navbar-toggler-icon bg-dark"></span>
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 								<div class="navbar-nav ms-auto">
@@ -37,7 +37,7 @@ export const Navbar = () => {
 						<>
 
 							<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-								<span className="navbar-toggler-icon"></span>
+								<span className="navbar-toggler-icon bg-dark"></span>
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 								<div class="navbar-nav ms-auto">

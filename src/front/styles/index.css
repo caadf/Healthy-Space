@@ -10,7 +10,7 @@
 
  h1{
     font-family: Copperplate;
-    font-size: 600%;
+    font-size: 10vw;
  }
 
  .card-title{
@@ -19,7 +19,7 @@
 
  .card-text {
     margin-top: 3%;
-    font-size: 118%;
+    font-size: 3vw;
     
    
  }
