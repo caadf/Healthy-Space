@@ -24,6 +24,7 @@ export const Navbar = () => {
 									<Link to="/busquedareceta" className="nav-link text-dark fs-3 btn btn-outline-success mx-1">Busqueda de recetas</Link>
 									<Link to="/calculoplanalimenticio" className="nav-dark text-dark fs-3 btn btn-outline-success mx-1">Calculo Plan alimenticio</Link>
 									<Link to="/gastocalorico" className="nav-link text-dark fs-3 btn btn-outline-success mx-1">Calculo Gasto Calorico</Link>
+									<Link to="/me" className="nav-link text-dark fs-3 btn btn-outline-success mx-1">Mi cuenta</Link>
 									<p className="nav-link text-dark fs-5">{store.user.name}</p>
 									<button className="nav-link bg-secondary text-light rounded-3" onClick={actions.logout}>Logout</button>
 

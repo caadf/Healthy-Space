@@ -7,7 +7,7 @@ from api.models import db, User
 from werkzeug.security import generate_password_hash, check_password_hash
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
-from flask_jwt_extended import jwt_required, create_access_token
+from flask_jwt_extended import jwt_required, create_access_token,  get_jwt_identity
 
 api = Blueprint('api', __name__)
 
@@ -77,66 +77,10 @@ def register():
     
     return jsonify({"success": "Register successfully, please log in!"}), 200
 
-
-
-
-
-
-
-
-
-""" @api.route('/perfil', methods=['GET'])
-def get_users():
-    usuario_query = User.query.all() # haciendo una consulta a la User para que traiga todos
-    usuario_query = list(map(lambda item: item.serialize(), usuario_query))
-    response_body = {
-        "message": "Usuarios encontrados",
-        "Usuario":usuario_query
-    }
-
-    return jsonify(response_body), 200 """
-
-@api.route('/perfil', methods=['GET'])
-def get_usuario():
-    
-    user = User.query.all()
-    print(user)
-    user = list(map(lambda user: user.serialize(), user))
-    print(user)
-    return jsonify(user), 200
-
-@api.route('/profile', methods=['GET'])
-def get_profile(user_id):
-    user = User.query.get(user_id)
-    
-    if user is None:
-        return jsonify({"error": "Usuario no encontrado"}), 404
-
+@api.route('/me')
+@jwt_required()
+def me():
+    id = get_jwt_identity() # accedemos a la informacion guardada en el token    
+    user = User.query.get(id) # buscamos el usuario por esa informacion
     return jsonify(user.serialize()), 200
 
-
-@api.route('/perfil', methods=['POST'])
-def perfil_actualizar():
-    
-    name = request.json.get('name', '')
-    peso = request.json.get('peso')
-    altura = request.json.get('altura')
-    edad = request.json.get('edad')
-    genero = request.json.get('genero')
-    
-
-    
-    user = User()
-    user.name = name
-    user.peso = peso
-    user.altura = altura
-    user.edad = edad
-    user.genero = genero
-
-    #db.session.add(user)
-    #db.session.commit()
-    
-    user.save()
-    
-    
-    return jsonify({"success": "You have update you profile"}), 200

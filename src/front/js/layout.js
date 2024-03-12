@@ -16,6 +16,7 @@ import CalculoPlanAlimenticio from "./pages/calculoplanalimenticio"
 import BusquedadeRecetas from "./pages/busquedaderecetas"
 
 
+import  Me  from "./component/Me.js";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { ToastContainer } from "react-toastify";
@@ -38,6 +39,7 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Perfil />} path="/perfil" />
                         <Route element={<Login />} path="/login" />
+                        <Route element={<Me />} path="/me" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<CalculoGastoCalorico />} path="/gastocalorico" />
                         <Route element={<CalculoPlanAlimenticio />} path="/calculoplanalimenticio" />

@@ -161,7 +161,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return fetch(url, options)
 			},
 
-
+			privateRoute: () => {
+                const { apiURL, access_token } = getStore()
+                const url = `${apiURL}/api/me`
+                const options = {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${access_token}`
+                    }
+                }
+                fetch(url, options)
+                    .then(response => {
+                        return response.json()
+                    })
+                    .then(datos => {
+                        if (datos.msg) toast.error(datos.msg)
+                        else {
+                            console.log(datos)
+                            setStore({
+                                user: datos
+                            })
+                        }
+                    })
+            },
 			logout: () => {
 				setStore({
 					user: null,
