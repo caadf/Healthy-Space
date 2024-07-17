@@ -18,17 +18,13 @@ Instalacion de las variables de entorno virtual
 
 ### Front-End Instalación:
 
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
+1. Instalar los paquetes: `$ npm install`
+2. Correr el navegador `$ npm run start`
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
+### Bootsrap Instalación:
 
-## Publish your website!
+1. Instalar los paquetes: `$ npm i boostrap`
 
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
+### React Instalación:
 
-### Contributors
-
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
-
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+1. Instalar los paquetes: `$ npm i react`
